@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@opencode-ai/plugin": "1.4.9",
+    "@slkiser/opencode-quota": "latest",
+    "@renjfk/opencode-voice": "latest"
+  }
+}
