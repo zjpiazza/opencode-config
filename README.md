@@ -7,7 +7,8 @@ My personalized OpenCode configuration.
 - **`opencode.json`** — Main OpenCode configuration file. Defines MCP servers, permissions, and settings.
 - **`AGENTS.md`** — Global agent instructions (e.g., Context7 MCP usage guidelines).
 - **`commands/review-pr.md`** — Custom `review-pr` command for handling PR checks and review feedback.
-- **`package.json`** — Dependencies required by this config (e.g., `@opencode-ai/plugin`, `@slkiser/opencode-quota`, `@renjfk/opencode-voice`).
+- **`package.json`** — Dependencies required by this config (e.g., `@opencode-ai/plugin`, `@slkiser/opencode-quota`).
+- **`plugins/opencode-voice/`** — Vendored `@renjfk/opencode-voice` with Linux audio fixes applied.
 - **`tui.json`** — TUI-specific configuration (e.g., voice plugin).
 
 ## Setup
@@ -36,9 +37,9 @@ Quota, usage, and token visibility for OpenCode with zero context window polluti
 
 After syncing this config and installing dependencies, restart OpenCode and run `/quota_status` to verify.
 
-### `@renjfk/opencode-voice`
+### `@renjfk/opencode-voice` (vendored with Linux fixes)
 
-Speech-to-text and text-to-speech plugin for OpenCode.
+Speech-to-text and text-to-speech plugin for OpenCode. This repo includes a **vendored copy** under `plugins/opencode-voice/` with patches for Linux audio device enumeration and recording (the upstream only supports macOS CoreAudio).
 
 - **STT**: Record voice prompts with local Whisper transcription, normalized by an LLM
 - **TTS**: Hear assistant responses spoken aloud via Piper TTS
